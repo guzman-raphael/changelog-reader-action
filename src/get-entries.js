@@ -3,7 +3,7 @@ const core = require('@actions/core')
 const versionSeparator = '\n## '
 const semverLinkRegex = /^\[v?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-?((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?\]/
 const unreleasedLinkRegex = /^\[unreleased\]/i
-const avoidNonVersionData = version => semverLinkRegex.test(version) || unreleasedLinkRegex.test(version)
+const avoidNonVersionData = version => semverLinkRegex.test(version)
 
 exports.getEntries = rawData => {
     const content = String(rawData)
